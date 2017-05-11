@@ -1,4 +1,3 @@
-#include <Math.h>
 
 int x = 2;
 int y = 0;
@@ -23,9 +22,9 @@ double Vyn = 1.83;
 double Vyp = 2.8;
 double Vzn =1.87;
 double Vzp = 2.81;
-double theta;
-double psi;
-double phi;
+double theta = 0;
+double psi = 0;
+double phi = 0;
 
 void setup () {
   Serial.begin(9600);
@@ -63,9 +62,10 @@ void loop () {
   //Serial.println(Arealz);
   delay(300);
   //Angle
-  theta = atan(double ((Arealx)/(sqrt((Arealy^2)+(Arealz^2)))));
-  psi = atan(double((Arealy)/(sqrt((Arealx^2)+(Arealz^2)))));
-  phi = atan(double((sqrt((Arealx^2)+(Arealy^2)))/(Arealz)));
+  theta = (Arealx)/(sqrt((Arealy*Arealy)+(Arealz*Arealz)));
+  theta = atan(theta);
+  psi = atan((Arealy)/(sqrt((Arealx*Arealx)+(Arealz*Arealz))));
+  phi = atan((sqrt((Arealx*Arealx)+(Arealy*Arealy)))/(Arealz));
 
   Serial.print(theta);
   Serial.print(" ");
