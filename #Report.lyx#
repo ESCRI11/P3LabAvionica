@@ -695,8 +695,8 @@ $-1
 
 \end_inset
 
- (en cada eje) para realizar dichas operaciones.
- Poner estas operaciones dentro del 
+, dichos valores se usan para hacer el calculo una sola vez y después no
+ hay que reperirlas, poner estas operaciones dentro del 
 \family typewriter
 loop
 \family default
@@ -716,7 +716,7 @@ $(3)$
 \family typewriter
 loop
 \family default
- ya que dicho valor se va actualizando al leer un nuevo valor de voltage
+ ya que dicho valor se va actualizando al cojer un nuevo valor de voltage
  del sensor.
  En la linea 59 se ha usado un delay para que al visualizar por el serial
  port los datos calculados el programa no se sobrecargue.

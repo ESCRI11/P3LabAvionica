@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{listings}
@@ -38,16 +36,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -137,10 +135,6 @@ status open
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -241,10 +235,6 @@ $g's$
 
 \begin_layout Standard
 El valor leido para las posiciones del acelerometro que se pedian han sido:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -259,7 +249,7 @@ status collapsed
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="7">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -473,9 +463,9 @@ El procedimiento realizado ha estado el siguiente:
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
+\[
 A_{OFF}[g]=0.5\text{·}(A_{+1g}+A_{-1g})
-\end{equation}
+\]
 
 \end_inset
 
@@ -485,241 +475,22 @@ A_{OFF}[g]=0.5\text{·}(A_{+1g}+A_{-1g})
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Gain=0.5\text{·}\left(\frac{A_{+1g}-A_{-1g}}{1\,g}\right)
 \end{equation}
 
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Los valores 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$A_{+1g}
-\backslash
-,,-A_{-1g}$
-\end_layout
-
-\end_inset
-
- son los correspondientes a la aceleración leída por el acelerometro (en
- el eje en el que se esté calibrando) cuando en dicho eje hay una aceleración
- real de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$1g$
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$-1g$
-\end_layout
-
-\end_inset
-
-; esto se consigue simplemente dejando el sensor en reposo en la dirección
- en la que se quiera calibrar y del revés.
-\end_layout
-
-\begin_layout Standard
-Para calcular el valor real de aceleración que está midiendo el acelerómetro,
- hay que usar los valores obtenidos en 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$(1)$
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$(2)$
-\end_layout
-
-\end_inset
-
- con la siguiente expressión:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-A_{ACTUAL}[g]=\frac{A_{OUT}-A_{OFF}}{Gain}
-\end{equation}
+\[
+A_{+1g}[g]=A_{off}+(1gxGain)
+\]
 
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para realizar los calculos con el Arduino UNO se ha usado el siguiente programa:
-\end_layout
-
-\begin_layout Standard
-
-\lang spanish
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstinputlisting{segonexe.ino}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang spanish
-Los calculos correspondientes a las equaciones 
-\lang english
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$(1)$
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$(2)$
-\end_layout
-
-\end_inset
-
- se han realizado en el 
-\family typewriter
-void setup () {} 
-\family default
-debido a que solo hay que realizarlas una sola vez, se han declarado los
- valores correspondientes de aceleración con 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$1
-\backslash
-,g$
-\end_layout
-
-\end_inset
-
- y 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$-1
-\backslash
-,g$
-\end_layout
-
-\end_inset
-
- (en cada eje) para realizar dichas operaciones.
- Poner estas operaciones dentro del 
-\family typewriter
-loop
-\family default
- sería un gasto de recursos innecessario.
- El calculo de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$(3)$
-\end_layout
-
-\end_inset
-
- si que hay que ponerlo en el 
-\family typewriter
-loop
-\family default
- ya que dicho valor se va actualizando al leer un nuevo valor de voltage
- del sensor.
- En la linea 59 se ha usado un delay para que al visualizar por el serial
- port los datos calculados el programa no se sobrecargue.
 \end_layout
 
 \end_body
