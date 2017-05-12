@@ -51,12 +51,8 @@ void loop () {
   accZ = convert(accZ);
   //X
   Arealx = ((accX-Aoffx)/(gaingX));
-  //Serial.print(Arealx);
-  //Serial.print(" ");
   //Y
   Arealy = ((accY-Aoffy)/(gaingY));
-  //Serial.print(Arealy);
-  //Serial.print(" ");
   //Z
   Arealz = ((accZ-Aoffz)/(gaingZ));
   //Serial.println(Arealz);
