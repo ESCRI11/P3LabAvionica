@@ -34,6 +34,17 @@ void setup () {
   Aoffy = 0.5*(convert(Vyp) + convert(Vyn));
   gaingZ = 0.5*(convert(Vzp) - convert(Vzn));
   Aoffz = 0.5*(convert(Vzp) + convert(Vzn));
+  Serial.print(gaingX);
+  Serial.print(" ");
+  Serial.print(Aoffx);
+  Serial.print(" ");
+  Serial.print(gaingY);
+  Serial.print(" ");
+  Serial.print(Aoffy);
+  Serial.print(" ");
+  Serial.print(gaingZ);
+  Serial.print(" ");
+  Serial.println(Aoffz);
 }
 
 void loop () {
@@ -55,7 +66,6 @@ void loop () {
   Arealy = ((accY-Aoffy)/(gaingY));
   //Z
   Arealz = ((accZ-Aoffz)/(gaingZ));
-  //Serial.println(Arealz);
   delay(300);
 }
 

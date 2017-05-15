@@ -616,6 +616,250 @@ status open
 \end_layout
 
 \begin_layout Standard
+Los resultados que se obtienen son los siguientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Posicion (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$XYZ$
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$X$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Y$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Z$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$A_{off}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.644
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.679
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.658
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Gain$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.112
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.259
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.224
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Determinación de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$A_{off}$
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$Gain$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Para realizar los calculos con el Arduino UNO se ha usado el siguiente programa:
 \end_layout
 
@@ -720,6 +964,19 @@ loop
  del sensor.
  En la linea 59 se ha usado un delay para que al visualizar por el serial
  port los datos calculados el programa no se sobrecargue.
+ Dentro del 
+\family typewriter
+void setup () {} 
+\family default
+se han puesto los
+\family typewriter
+ Serial.print 
+\family default
+para visualizar los valores calculados por la pantalla.
+\end_layout
+
+\begin_layout Section
+Cálculo de inclinación
 \end_layout
 
 \end_body
